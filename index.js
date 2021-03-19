@@ -1,4 +1,4 @@
-import http from 'http'
+import fetchAndPrint from './libs/fetchAndPrint.js'
 import help from './libs/help.js'
 
 
@@ -8,7 +8,8 @@ const options = {
     method: "GET",
     path: "/",
     headers: {
-        settingValue: null
+        settingValue: null,
+        newSettings: null
     }
 }
 
@@ -20,21 +21,18 @@ switch (option) {
             if (args[1]) {
                 options.method = "GET"
                 options.path = `/settings/get/${args[1]}`
-                let req = http.request(options, res => console.log(res.on("data", data => process.stdout.write(data))))
-                req.end()
+                fetchAndPrint(options)
             } else {
                 options.method = "GET"
                 options.path = `/settings/get`
-                let req = http.request(options, res => console.log(res.on("data", data => process.stdout.write(data))))
-                req.end()
+                fetchAndPrint(options)
             }
         else if (args[0] == "set")
             if (args[2]) {
                 options.method = "POST"
                 options.path = `/settings/set/${args[1]}`
                 options.headers.settingValue = args[2]
-                let req = http.request(options, res => console.log(res.on("data", data => process.stdout.write(data))))
-                req.end()
+                fetchAndPrint(options)
             } else {
                 console.log("You cannot set all settings at once, yet!")
             }
@@ -42,7 +40,19 @@ switch (option) {
         break
     
     case "status":
-        if (args[0] == "")
+        if (args[0] == "casting") {
+            options.method = "GET"
+            options.path = `/server/status/casting`
+            fetchAndPrint(options)
+        } else if (args[0] == "allow-connect") {
+            options.method = "GET"
+            options.path = `/server/status/allowConnections`
+            fetchAndPrint(options)
+        } else {
+            options.method = "GET"
+            options.path = `/server/status`
+            fetchAndPrint(options)
+        }
 
         break
 

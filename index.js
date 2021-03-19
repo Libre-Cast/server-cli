@@ -58,17 +58,17 @@ switch (option) {
 
         break
 
-        case "manual":
-            console.log(args)
-            options.method = args[0].toUpperCase()
-            options.path = `/${args[1]}`
-            options.headers = args[2] ? JSON.parse(args[2]) : ''
+    case "manual":
+        console.log(args)
+        options.method = args[0].toUpperCase()
+        options.path = `/${args[1]}`
+        options.headers = args[2] ? JSON.parse(args[2]) : ''
 
-            console.log(console.headers);
+        console.log(console.headers);
 
-            fetchAndPrint(options)
+        fetchAndPrint(options)
 
-            break
+        break
 
     default:
         help.print()

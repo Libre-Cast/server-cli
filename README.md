@@ -36,6 +36,7 @@ node index.js [command] <args>
 ```bash
 git clone https://github.com/Libre-Cast/server-cli
 cd server-cli
+npm i
 node index.js [command] <args>
 ```
 

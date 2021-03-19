@@ -7,6 +7,8 @@ const options = {
     port: 18381,
     method: "GET",
     path: "/",
+    rejectUnauthorized: false,
+    requestCert: true,
     headers: {
         settingValue: null,
         newSettings: null
@@ -55,6 +57,18 @@ switch (option) {
         }
 
         break
+
+        case "manual":
+            console.log(args)
+            options.method = args[0].toUpperCase()
+            options.path = `/${args[1]}`
+            options.headers = args[2] ? JSON.parse(args[2]) : ''
+
+            console.log(console.headers);
+
+            fetchAndPrint(options)
+
+            break
 
     default:
         help.print()

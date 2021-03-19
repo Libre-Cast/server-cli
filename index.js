@@ -58,6 +58,13 @@ switch (option) {
 
         break
 
+    case "qrcode":
+        options.method = "GET"
+        options.path = `/server/qrcode/${args[0] ? args[0] : "svg"}`
+        fetchAndPrint(options)
+
+        break
+
     case "manual":
         console.log(args)
         options.method = args[0].toUpperCase()

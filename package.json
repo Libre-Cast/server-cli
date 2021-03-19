@@ -16,8 +16,5 @@
   "bugs": {
     "url": "https://github.com/Libre-Cast/server-cli/issues"
   },
-  "homepage": "https://github.com/Libre-Cast/server-cli#readme",
-  "dependencies": {
-    "http": "^0.0.1-security"
-  }
+  "homepage": "https://github.com/Libre-Cast/server-cli#readme"
 }

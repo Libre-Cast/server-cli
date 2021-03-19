@@ -1,4 +1,4 @@
-import http, { request } from 'http'
+import http from 'http'
 import help from './libs/help.js'
 
 
@@ -36,7 +36,7 @@ switch (option) {
                 let req = http.request(options, res => console.log(res.on("data", data => process.stdout.write(data))))
                 req.end()
             } else {
-                console.log("You cannot set all settings in one, yet!")
+                console.log("You cannot set all settings at once, yet!")
             }
         
         break

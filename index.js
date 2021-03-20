@@ -71,6 +71,58 @@ switch (option) {
 
         break
 
+    case "device":
+        switch (args[0]) {
+            case "connect":
+                options.method = "POST"
+                options.path = "/device/connect"
+                fetchAndPrint(options)
+                break
+
+            case "remove":
+                options.method = "DELETE"
+                options.path = `/device/remove/${args[1]}`
+                fetchAndPrint(options)
+
+                break
+
+            case "pending":
+                options.method = "GET"
+                options.path = "/device/pendingRequests"
+                fetchAndPrint(options)
+
+                break
+
+            case "trust":
+                options.method = "PUT"
+                options.path = `/device/confirmRequest/${args[1]}`
+                fetchAndPrint(options)
+
+                break
+
+            case "info":
+                options.method = "GET"
+                options.path = `/device/info/${args[1]}`
+                fetchAndPrint(options)
+
+                break
+
+            case "test":
+                options.method = "GET"
+                options.path = "/device/test"
+                options.headers.deviceID = args[1]
+                options.headers.deviceKey = args[2]
+                fetchAndPrint(options)
+
+                break
+
+            default:
+                console.log("Invalid use!")
+                break
+        }
+
+        break
+
     case "manual":
         console.log(args)
         options.method = args[0].toUpperCase()

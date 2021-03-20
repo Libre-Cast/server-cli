@@ -9,13 +9,10 @@ const options = {
     path: "/",
     rejectUnauthorized: false,
     requestCert: true,
-    headers: {
-        settingValue: null,
-        newSettings: null
-    }
+    headers: {}
 }
 
-const [node, entryPoint, option, ...args] = process.argv
+const [,, option, ...args] = process.argv
 
 switch (option) {
     case "settings":

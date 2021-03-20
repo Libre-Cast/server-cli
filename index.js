@@ -65,6 +65,15 @@ switch (option) {
 
         break
 
+    case "notify":
+        options.method = "POST"
+        options.path = "/server/notify"
+        options.headers.notiTitle = args[0]
+        options.headers.notiMessage = args[1]
+        fetchAndPrint(options)
+
+        break
+
     case "manual":
         console.log(args)
         options.method = args[0].toUpperCase()

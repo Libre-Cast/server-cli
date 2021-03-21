@@ -7,8 +7,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build-linux": "caxa --directory \"$(pwd)\" --command \"{{caxa}}/node_modules/.bin/node\" \"{{caxa}}/index.js\" --output \"LibreCast-CLI\"",
-    "build-win": "caxa --directory \"$(cwd)\" --command \"{{caxa}}/node_modules/.bin/node\" \"{{caxa}}/index.js\" --output \"LibreCast-CLI.exe\""
-    "build-osx": "caxa --directory \"$(pwd)\" --command \"{{caxa}}/node_modules/.bin/node\" \"{{caxa}}/index.js\" --output \"LibreCast-CLI.App\"",
+    "build-win": "caxa --directory \"$(cwd)\" --command \"{{caxa}}/node_modules/.bin/node\" \"{{caxa}}/index.js\" --output \"LibreCast-CLI.exe\"",
+    "build-osx": "caxa --directory \"$(pwd)\" --command \"{{caxa}}/node_modules/.bin/node\" \"{{caxa}}/index.js\" --output \"LibreCast-CLI.App\""
   },
   "repository": {
     "type": "git",

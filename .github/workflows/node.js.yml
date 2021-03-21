@@ -35,8 +35,4 @@ jobs:
         automatic_release_tag: "latest"
         prerelease: true
         title: "Early Build"
-        files: |
-          LICENSE
-          LibreCast-CLI
-          LibreCast-CLI.exe
-          LibreCast-CLI.App
+        files: LibreCast-CLI*

@@ -40,5 +40,21 @@ npm i
 node index.js [command] <args>
 ```
 
+An experminatal way of building it exists as `npm run build-[platform]`:
+```bash
+git clone https://github.com/Libre-Cast/server-cli
+cd server-cli
+npm i
+npm run build-[platform]
+```
+
+It is experimental and might not work properly. The possible platforms are:
+* win
+* linux
+* osx
+
+You can't cross-compile, the command for each platform is simply different.
+
+
 # Bug report, issues, requests
 Just create and issue for it, and I'll try to take a look into it.
